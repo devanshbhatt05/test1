@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Yes/No Question</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        #yesButton, #noButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        #noButton {
+            position: relative;
+        }
+
+        #textBox {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="question">Will you be going out with me?</div>
+        <div class="buttons">
+            <button id="yesButton">Yes</button>
+            <button id="noButton">No</button>
+        </div>
+        <div id="textBox">Thank your for accepting a dat out with me....send this code word in chat for further steps..valar morghulis</div>
+    </div>
+
+    <script>
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const textBox = document.getElementById('textBox');
+
+        yesButton.addEventListener('click', () => {
+            textBox.style.display = 'block';
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.clientWidth);
+            const y = Math.random() * (window.innerHeight - noButton.clientHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
+
+</body>
+</html>
